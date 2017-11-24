@@ -1,0 +1,289 @@
+C51 COMPILER V9.52.0.0   MELODY                                                            08/31/2017 10:46:21 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MELODY
+OBJECT MODULE PLACED IN melody.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE melody.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          // 用1标识休止。0标识全曲终了。每小节一行
+   2          Note code melody_inocent_treasures[] = {
+*** ERROR C129 IN LINE 2 OF melody.c: missing ';' before 'code'
+   3                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+   4                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+   5                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/4.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_F_5, 1.0/8.0},
+   6                  {PITCH_FS_5, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0},  {PITCH_F_5,   1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_DS_5
+             -, 1.0/2.0},
+   7                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_5
+             -, 1.0/4.0}, {PITCH_DS_5, 1.0/2.0},
+   8                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_5
+             -, 1.0/4.0}, {PITCH_DS_5, 1.0/2.0},
+   9                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_F_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0}, 
+  10                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4,  1.0/8.0}, {PITCH_F_4,   1.0/8.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_FS_4
+             -, 1.0/8.0}, {PITCH_FS_4, 3.0/4.0},
+  11                  {1, 1.0/4.0}, {1, 1.0/2.0},
+  12                  {PITCH_DS_4, 1.0/8.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_DS_4, 1.0/16.0}, {PITCH_F_4, 1.0/16.0}, {PITCH_FS_4,
+             - 1.0/16.0}, {PITCH_DS_4, 1.0/16.0}, {1, 1.0/2.0},
+  13                  {PITCH_DS_4, 1.0/16.0}, {PITCH_F_4, 1.0/16.0}, {PITCH_FS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_F_4
+             -, 1.0/16.0}, {PITCH_FS_4, 1.0/16.0}, {PITCH_DS_4, 1.0/4.0}, {1, 1.0/4.0}, {1, 1.0/8.0},
+  14                  {PITCH_DS_4, 1.0/8.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_DS_4, 1.0/16.0}, {PITCH_F_4, 1.0/16.0}, {PITCH_FS_4,
+             - 1.0/16.0}, {PITCH_DS_4, 1.0/16.0}, {1, 1.0/2.0},
+  15                  {PITCH_DS_4, 1.0/16.0}, {PITCH_F_4, 1.0/16.0}, {PITCH_FS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_F_4
+             -, 1.0/16.0}, {PITCH_FS_4, 1.0/16.0}, {PITCH_DS_4, 1.0/4.0}, {1, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  16                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  17                  {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_4, 
+             -1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  18                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  19                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_F_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_CS_4, 1
+             -.0/8.0},
+  20                  {PITCH_D_4, 1.0},
+  21                  {PITCH_D_4, 1.0/4.0}, {PITCH_F_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.
+             -0/8.0},
+  22                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  23                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  24                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 
+             -1.0/8.0}, {PITCH_AS_4, 1.0/8.0},
+  25                  {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_4, 
+             -1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  26                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  27                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_F_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_CS_4, 1
+             -.0/8.0},
+  28                  {PITCH_D_4, 1.0},
+  29                  {1, 1.0},
+  30                  {PITCH_AS_4, 1.0/2.0}, {PITCH_AS_4, 3.0/16.0}, {PITCH_GS_4, 3.0/16.0}, {PITCH_DS_4, 1.0/8.0},
+  31                  {PITCH_AS_4, 1.0/2.0}, {PITCH_AS_4, 3.0/16.0}, {PITCH_GS_4, 3.0/16.0}, {PITCH_DS_4, 1.0/8.0},
+C51 COMPILER V9.52.0.0   MELODY                                                            08/31/2017 10:46:21 PAGE 2   
+
+  32                  {PITCH_GS_4, 1.0/2.0}, {PITCH_GS_4, 3.0/16.0}, {PITCH_AS_4, 3.0/16.0}, {PITCH_DS_4, 1.0/8.0}, 
+  33                  {PITCH_G_4, 1.0/4.0}, {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, 
+  34                  {PITCH_AS_4, 1.0/2.0}, {PITCH_AS_4, 3.0/16.0}, {PITCH_GS_4, 3.0/16.0}, {PITCH_DS_4, 1.0/8.0},
+  35                  {PITCH_AS_4, 1.0/2.0}, {PITCH_AS_4, 3.0/16.0}, {PITCH_DS_4, 3.0/16.0}, {PITCH_FS_4, 1.0/8.0},
+  36                  {PITCH_GS_4, 1.0/2.0}, {PITCH_DS_4, 3.0/16.0}, {PITCH_GS_4, 3.0/16.0}, {PITCH_B_4, 1.0/8.0},
+  37                  {PITCH_B_3, 1.0/8.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_GS_4, 1
+             -.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  38                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  39                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  40                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 
+             -1.0/8.0}, {PITCH_AS_4, 1.0/8.0},
+  41                  {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_4, 
+             -1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  42                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  43                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_F_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_CS_4, 1
+             -.0/8.0},
+  44                  {PITCH_D_4, 1.0/4.0},
+  45                  {PITCH_D_4, 1.0/4.0}, {PITCH_F_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.
+             -0/8.0},
+  46                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  47                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_4, 1.0/4.0}, {PITCH_CS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  48                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_CS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 
+             -1.0/8.0}, {PITCH_AS_4, 1.0/8.0},
+  49                  {PITCH_GS_4, 1.0/8.0},{PITCH_AS_4, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_4, 1
+             -.0/8.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 1.0/8.0},
+  50                  {PITCH_GS_4, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/4.0}, {PITCH_DS_4, 1.0/8.0}, {PITCH_FS_4, 
+             -1.0/8.0},
+  51                  {PITCH_D_4, 1.0},
+  52                  {PITCH_AS_4, 1.0},
+  53                  {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_FS_5, 
+             -1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0},
+  54                  {PITCH_AS_4, 1.0/4.0}, {PITCH_AS_4, 1.0}, 
+  55                  {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_AS_5, 1
+             -.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/4.0},
+  56                  {PITCH_B_4, 3.0/4.0}, {PITCH_GS_5, 1.0/4.0},
+  57                  {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_AS_4, 
+             -1.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0},  // why only 7 notes?
+  58                  {PITCH_AS_4, 1.0},
+  59                  {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_FS_5, 
+             -1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_CS_5, 1.0/4.0},
+  60                  {PITCH_AS_4, 1.0},
+  61                  {PITCH_AS_4, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_FS_5, 
+             -1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0},
+  62                  {PITCH_AS_4, 1.0},
+  63                  {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_AS_5, 1
+             -.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/4.0},
+  64                  {PITCH_DS_5, 3.0/4.0}, {PITCH_GS_5, 1.0/4.0},
+  65                  {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_B_4, 1
+             -.0/8.0}, {PITCH_CS_5, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, // why only 7 notes?
+  66                  {PITCH_GS_4, 3.0/8.0}, {PITCH_GS_5, 1.0/4.0}, {PITCH_AS_5, 1.0/16.0}, {PITCH_B_5, 1.0/16.0}, {PITCH_DS_6,
+             - 1.0/16.0}, {PITCH_B_5, 1.0/16.0}, {PITCH_AS_5, 1.0/16.0}, {PITCH_DS_5, 1.0/16.0},
+  67                  {PITCH_FS_5, 1.0/8.0}, {PITCH_GS_5, 1.0/8.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_AS_5, 1.0/8.0}, {PITCH_GS_5, 1
+             -.0/8.0}, {PITCH_FS_5, 1.0/4.0},
+  68                  {PITCH_GS_4, 3.0/4.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0},
+  69                  {PITCH_GS_5, 1.0/4.0}, {PITCH_AS_5, 1.0/4.0}, {PITCH_DS_5, 1.0/4.0}, {PITCH_DS_5, 1.0/8.0}, {PITCH_FS_5, 
+             -1.0/8.0},
+  70                  {PITCH_GS_5, 1.0/4.0}, {PITCH_AS_5, 1.0/4.0}, {PITCH_CS_6, 1.0/8.0}, {PITCH_AS_5, 1.0/8.0},  {PITCH_GS_5,
+C51 COMPILER V9.52.0.0   MELODY                                                            08/31/2017 10:46:21 PAGE 3   
+
+             - 1.0/8.0}, {PITCH_AS_5, 1.0/8.0},
+  71                  {PITCH_DS_6, 1.0},
+  72                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+  73                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+  74                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/4.0}, {PITCH_AS_4, 1.0/4.0}, {PITCH_F_5, 1.0/4.0},
+  75                  {PITCH_FS_5, 1.0/8.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_F_5, 1.0/8.0}, {PITCH_GS_4, 1.0/8.0}, {PITCH_DS_5, 1
+             -.0/2.0},
+  76                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+  77                  {PITCH_DS_4, 1.0/8.0}, {PITCH_AS_4, 1.0/16.0}, {PITCH_GS_4, 1.0/16.0}, {PITCH_AS_4, 1.0/8.0}, {PITCH_CS_5
+             -, 1.0/8.0}, {PITCH_DS_5, 1.0/2.0},
+  78                  {1, 1.0/2.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_G_4, 1.0/4.0},
+  79                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  80                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_4, 1.0/4.0}, {PITCH_D_4, 1.0/4.0}, {PITCH_G_4, 1.0/4
+             -.0},
+  81                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+             -.0}, {PITCH_B_4, 1.0/8.0},
+  82                  {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_E_4, 1.0/4
+             -.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8.0},
+  83                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+  84                  {PITCH_B_3, 1.0},
+  85                  {PITCH_B_3, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/
+             -8.0},
+  86                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  87                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_4, 1.0/4.0}, {PITCH_D_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  88                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+             -.0}, {PITCH_B_4, 1.0/8.0},
+  89                  {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_E_4, 1.0/4
+             -.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8.0},
+  90                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  91                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+  92                  {PITCH_B_3, 1.0},
+  93                  {1, 1.0},
+  94                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  95                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  96                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+             -.0}, {PITCH_B_4, 1.0/8.0},
+  97                  {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_E_4, 1.0/4
+             -.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8.0},
+  98                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+  99                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+ 100                  {PITCH_DS_4, 1.0},
+ 101                  {PITCH_DS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0
+             -/8.0},
+ 102                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 103                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 104                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+C51 COMPILER V9.52.0.0   MELODY                                                            08/31/2017 10:46:21 PAGE 4   
+
+             -.0}, {PITCH_B_4, 1.0/8.0},
+ 105                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 106                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 107                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+ 108                  {PITCH_DS_4, 1.0},
+ 109                  {1, 1.0},
+ 110                  {PITCH_B_4, 1.0/2.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_A_4, 3.0/16.0}, {PITCH_E_4, 1.0/8.0},
+ 111                  {PITCH_B_4, 1.0/2.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_A_4, 3.0/16.0}, {PITCH_E_4, 1.0/8.0},
+ 112                  {PITCH_A_4, 1.0/2.0}, {PITCH_A_4, 3.0/16.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_E_4, 1.0/8.0},
+ 113                  {PITCH_GS_4, 1.0/4.0}, {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0},
+ 114                  {PITCH_B_4, 1.0/2.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_A_4, 3.0/16.0}, {PITCH_E_4, 1.0/8.0},
+ 115                  {PITCH_B_4, 1.0/2.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_E_4, 3.0/16.0}, {PITCH_G_4, 1.0/8.0},
+ 116                  {PITCH_A_4, 1.0/2.0}, {PITCH_E_4, 3.0/16.0}, {PITCH_B_4, 3.0/16.0}, {PITCH_C_5, 1.0/8.0},
+ 117                  {PITCH_C_5, 1.0/8.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_A_4, 1.0/4
+             -.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8.0},
+ 118                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 119                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 120                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+             -.0}, {PITCH_B_4, 1.0/8.0},
+ 121                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 122                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 123                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+ 124                  {PITCH_DS_4, 1.0},
+ 125                  {PITCH_DS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0
+             -/8.0},
+ 126                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 127                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 128                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_A_4, 1.0/8
+             -.0}, {PITCH_B_4, 1.0/8.0},
+ 129                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 130                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_E_4, 1.0/4.0}, {PITCH_E_4, 1.0/8.0}, {PITCH_G_4, 1.0/8
+             -.0},
+ 131                  {PITCH_A_4, 1.0/4.0}, {PITCH_B_4, 1.0/4.0}, {PITCH_FS_4, 1.0/4.0}, {PITCH_FS_4, 1.0/8.0}, {PITCH_D_4, 1.0
+             -/8.0},
+ 132                  {PITCH_B_3, 1.0},
+ 133                  {1, 1.0},
+ 134                  {PITCH_B_4, 1.0},
+ 135                  {PITCH_B_4, 1.0/8.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_G_5, 1.0/8
+             -.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_E_5, 1.0/8.0},
+ 136                  {PITCH_B_4, 1.0/8.0}, {PITCH_B_4, 1.0/2.0},
+ 137                  {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_C_6, 1.0/8.0}, {PITCH_B_5, 1.0/8
+             -.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_G_5, 1.0/4.0},
+ 138                  {PITCH_A_5, 1.0/2.0}, {PITCH_A_5, 1.0/4.0},
+ 139                  {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_B_4, 1.0/8
+             -.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_A_4, 1.0/8.0},
+ 140                  {PITCH_B_4, 1.0},
+ 141                  {PITCH_B_4, 1.0/8.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_G_5, 1.0/8
+             -.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_D_5, 1.0/4.0},
+ 142                  {PITCH_B_4, 1.0},
+ 143                  {PITCH_B_4, 1.0/8.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_G_5, 1.0/8
+             -.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_E_5, 1.0/8.0},
+C51 COMPILER V9.52.0.0   MELODY                                                            08/31/2017 10:46:21 PAGE 5   
+
+ 144                  {PITCH_B_4, 1.0},
+ 145                  {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_C_6, 1.0/8.0}, {PITCH_B_5, 1.0/8
+             -.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_G_5, 1.0/4.0},
+ 146                  {PITCH_A_5, 1.0/8.0}, {PITCH_A_5, 3.0/4.0}, {PITCH_A_5, 1.0/4.0},
+ 147                  {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_B_4, 1.0/8
+             -.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_A_4, 1.0/8.0},
+ 148                  {PITCH_B_4, 3.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_B_5, 1.0/16.0}, {PITCH_C_6, 1.0/16.0}, {PITCH_E_6, 1.0
+             -/16.0}, {PITCH_C_6, 1.0/16.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_E_5, 1.0/4.0},
+ 149                  {PITCH_G_5, 1.0/8.0}, {PITCH_A_5, 1.0/8.0}, {PITCH_C_6, 1.0/8.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_A_5, 1.0/8
+             -.0}, {PITCH_G_5, 1.0/4.0},
+ 150                  {PITCH_A_5, 3.0/4.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8.0},
+ 151                  {PITCH_A_5, 1.0/4.0}, {PITCH_B_5, 1.0/4.0}, {PITCH_E_5, 1.0/4.0}, {PITCH_E_5, 1.0/8.0}, {PITCH_G_5, 1.0/8
+             -.0},
+ 152                  {PITCH_A_5, 1.0/4.0}, {PITCH_B_5, 1.0/4.0}, {PITCH_D_5, 1.0/8.0}, {PITCH_B_5, 1.0/8.0}, {PITCH_A_5, 1.0/8
+             -.0}, {PITCH_B_5, 1.0/8.0},
+ 153                  {PITCH_E_6, 1.0},
+ 154                  {PITCH_E_4, 1.0/8.0}, {PITCH_B_4, 1.0/16.0}, {PITCH_A_4, 1.0/16.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_D_5, 1.0
+             -/8.0}, {PITCH_E_5, 1.0/2.0},
+ 155                  {PITCH_E_4, 1.0/8.0}, {PITCH_B_4, 1.0/16.0}, {PITCH_A_4, 1.0/16.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_D_5, 1.0
+             -/8.0}, {PITCH_E_5, 1.0/2.0},
+ 156                  {PITCH_E_4, 1.0/8.0}, {PITCH_B_4, 1.0/16.0}, {PITCH_A_4, 1.0/16.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_D_5, 1.0
+             -/8.0}, {PITCH_E_5, 1.0/4.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0},
+ 157                  {PITCH_G_5, 1.0/8.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_FS_5, 1.0/8.0}, {PITCH_A_4, 1.0/8.0}, {PITCH_E_5, 1.0/
+             -2.0},
+ 158                  {PITCH_E_4, 1.0/8.0}, {PITCH_B_4, 1.0/16.0}, {PITCH_A_4, 1.0/16.0}, {PITCH_B_4, 1.0/8.0}, {PITCH_D_5, 1.0
+             -/8.0}, {PITCH_E_5, 1.0/2.0},
+ 159          
+ 160                  {0,1}
+ 161          };
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)

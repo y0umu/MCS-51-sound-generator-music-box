@@ -1,0 +1,481 @@
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: D:\Keil\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          //#define USE_STC15    // without the define it will fall back to the headers, macros, etc defined by your
+             - compiler
+   2          
+   3          #include "pitches.h"
+   4          #ifdef USE_STC15
+                #include "STC15.H"
+              #else
+   7            #include <reg52.h>
+   8          #endif  // USE_STC15
+   9          
+  10          #ifndef USE_STC15
+  11          sbit P33 = P3^3;
+  12          sbit P34 = P3^4;
+  13          #endif  // USE_STC15
+  14          
+  15          typedef unsigned char uchar;
+  16          typedef unsigned int uint;
+  17          
+  18          #define FOSC_MHZ 12
+  19          #define T2L_RST ((65535 - 500) % 256)
+  20          #define T2H_RST ((65536 - 500) >> 8)
+  21          #define pin_sound_out P33
+  22          
+  23          #define PAUSE     1
+  24          #define NOT_PAUSE 0
+  25          
+  26          typedef struct _Note {
+  27                  unsigned int pitch;
+  28                  unsigned char div;   // possible values are: DIV_1, DIV_2, DIV_4, DIV_8, DIV_16 and their values ORed wit
+             -h DIV_ADD_HALF respectively
+  29          } Note;
+  30          
+  31          
+  32          // Setting .pitch = 1 means pause
+  33          // Setting .pitch = 0 means the end
+  34          code Note melody_inocent_treasures[] = {
+  35                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+  36                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+  37                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_4}, {PITCH_AS_4, DIV_8}, {PITCH_F_5, DIV_8},
+  38                  {PITCH_FS_5, DIV_8}, {PITCH_AS_4, DIV_8},  {PITCH_F_5,   DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_DS_5, DIV_2}
+             -,
+  39                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+  40                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+  41                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_F_4, DIV_8}, {PITCH_FS_4, DIV_8}, 
+  42                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4,  DIV_8}, {PITCH_F_4,   DIV_8}, {PITCH_FS_4, DIV_8}, {PITCH_FS_4, DIV_8}
+             -, {PITCH_FS_4, DIV_4 | DIV_ADD_HALF},
+  43                  {1, DIV_4}, {1, DIV_2},
+  44          
+  45                  // beigins para 11
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 2   
+
+  46                  {PITCH_DS_4, DIV_8}, {PITCH_DS_4, DIV_8}, {PITCH_DS_4, DIV_16}, {PITCH_F_4, DIV_16}, {PITCH_FS_4, DIV_16}
+             -, {PITCH_DS_4, DIV_16}, {1, DIV_2},
+  47                  {PITCH_DS_4, DIV_16}, {PITCH_F_4, DIV_16}, {PITCH_FS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_F_4, DIV_16
+             -}, {PITCH_FS_4, DIV_16}, {PITCH_DS_4, DIV_4}, {1, DIV_4}, {1, DIV_8},
+  48                  {PITCH_DS_4, DIV_8}, {PITCH_DS_4, DIV_8}, {PITCH_DS_4, DIV_16}, {PITCH_F_4, DIV_16}, {PITCH_FS_4, DIV_16}
+             -, {PITCH_DS_4, DIV_16}, {1, DIV_2},
+  49                  {PITCH_DS_4, DIV_16}, {PITCH_F_4, DIV_16}, {PITCH_FS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_F_4, DIV_16
+             -}, {PITCH_FS_4, DIV_16}, {PITCH_DS_4, DIV_4}, {1, DIV_8}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  50                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  51                  // begins para 16
+  52                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  53                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, 
+             -{PITCH_AS_4, DIV_8},
+  54                  {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_DS_4, DIV_4}, 
+             -{PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  55                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  56                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_CS_4, DIV_8},
+  57                  {PITCH_AS_3, DIV_1},
+  58          
+  59                  // begins para 22
+  60                  {PITCH_D_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  61                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  62                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  63                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, 
+             -{PITCH_AS_4, DIV_8},
+  64                  {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_DS_4, DIV_4}, 
+             -{PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  65                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  66                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_CS_4, DIV_8},
+  67                  {PITCH_AS_3, DIV_1},
+  68                  {1, DIV_1},
+  69          //      
+  70                  // begins para 31
+  71                  {PITCH_AS_4, DIV_2}, {PITCH_AS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_GS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_DS_
+             -4, DIV_8},
+  72                  {PITCH_AS_4, DIV_2}, {PITCH_AS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_GS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_DS_
+             -4, DIV_8},
+  73                  {PITCH_GS_4, DIV_2}, {PITCH_GS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_AS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_DS_
+             -4, DIV_8}, 
+  74                  {PITCH_G_4, DIV_4}, {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, 
+  75                  {PITCH_AS_4, DIV_2}, {PITCH_AS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_GS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_DS_
+             -4, DIV_8},
+  76                  {PITCH_AS_4, DIV_2}, {PITCH_AS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_DS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_FS_
+             -4, DIV_8},
+  77                  {PITCH_GS_4, DIV_2}, {PITCH_DS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_GS_4, DIV_16 | DIV_ADD_HALF}, {PITCH_B_4
+             -, DIV_8},
+  78                  {PITCH_B_3, DIV_8}, {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_DS_4, DIV_8}, {PITCH_GS_4, DIV_4}, {
+             -PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  79                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  80                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  81                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, 
+             -{PITCH_AS_4, DIV_8},
+  82                  {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_DS_4, DIV_4}, 
+             -{PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  83                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  84                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_CS_4, DIV_8},
+  85                  {PITCH_AS_3, DIV_2},
+  86          
+  87          //      // begins para 46
+  88                  {PITCH_D_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  89                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  90                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_4, DIV_4}, {PITCH_CS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 3   
+
+  91                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_CS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, 
+             -{PITCH_AS_4, DIV_8},
+  92                  {PITCH_GS_4, DIV_8},{PITCH_AS_4, DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_DS_4, DIV_4}, {
+             -PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  93                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_DS_4, DIV_4}, {PITCH_DS_4, DIV_8}, {PITCH_FS_4, DIV_8},
+  94                  {PITCH_GS_4, DIV_4}, {PITCH_AS_4, DIV_4}, {PITCH_F_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_CS_4, DIV_8},
+  95                  {PITCH_AS_3, DIV_1},
+  96                  
+  97                  //begins para 54
+  98                  {PITCH_AS_4, DIV_1},
+  99                  {PITCH_AS_4, DIV_8}, {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_FS_5, DIV_8}, 
+             -{PITCH_DS_5, DIV_8}, {PITCH_CS_5, DIV_8}, {PITCH_DS_5, DIV_8},
+ 100                  {PITCH_AS_4, DIV_4}, {PITCH_AS_4, DIV_1}, 
+ 101                  {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_B_5, DIV_8}, {PITCH_AS_5, DIV_8}, {
+             -PITCH_GS_5, DIV_8}, {PITCH_FS_5, DIV_4},
+ 102                  {PITCH_GS_5, DIV_2}, {PITCH_GS_5, DIV_4},
+ 103                  {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_CS_5, DIV_8}, {PITCH_DS_5, DIV_8}, {PITCH_AS_4, DIV_8}, 
+             -{PITCH_CS_5, DIV_8}, {PITCH_GS_4, DIV_8},
+ 104                  
+ 105                  // begins para 60
+ 106                  {PITCH_AS_4, DIV_1},
+ 107                  {PITCH_AS_4, DIV_8}, {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_FS_5, DIV_8}, 
+             -{PITCH_DS_5, DIV_8}, {PITCH_CS_5, DIV_4},
+ 108                  {PITCH_AS_4, DIV_1},
+ 109                  {PITCH_AS_4, DIV_8}, {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_FS_5, DIV_8}, 
+             -{PITCH_DS_5, DIV_8}, {PITCH_CS_5, DIV_8}, {PITCH_DS_5, DIV_8},
+ 110                  
+ 111                  // begins para 64
+ 112                  {PITCH_AS_4, DIV_1},
+ 113                  {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_B_5, DIV_8}, {PITCH_AS_5, DIV_8}, {
+             -PITCH_GS_5, DIV_8}, {PITCH_FS_5, DIV_4},
+ 114                  {PITCH_GS_5, DIV_4 | DIV_ADD_HALF}, {PITCH_GS_5, DIV_4},
+ 115                  {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_CS_5, DIV_8}, {PITCH_DS_5, DIV_8}, {PITCH_B_4, DIV_8}, {
+             -PITCH_CS_5, DIV_8}, {PITCH_GS_4, DIV_8},
+ 116                  {PITCH_GS_4, DIV_8 | DIV_ADD_HALF}, {PITCH_GS_5, DIV_4}, {PITCH_AS_5, DIV_16}, {PITCH_B_5, DIV_16}, {PITC
+             -H_DS_6, DIV_16}, {PITCH_B_5, DIV_16}, {PITCH_AS_5, DIV_16}, {PITCH_DS_5, DIV_16},
+ 117                  {PITCH_FS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {PITCH_B_5, DIV_8}, {PITCH_AS_5, DIV_8}, {PITCH_GS_5, DIV_8}, {
+             -PITCH_FS_5, DIV_4},
+ 118                  {PITCH_GS_5, DIV_4 | DIV_ADD_HALF}, {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8},
+ 119                  {PITCH_GS_5, DIV_4}, {PITCH_AS_5, DIV_4}, {PITCH_DS_5, DIV_4}, {PITCH_DS_5, DIV_8}, {PITCH_FS_5, DIV_8},
+ 120                  {PITCH_GS_5, DIV_4}, {PITCH_AS_5, DIV_4}, {PITCH_CS_6, DIV_8}, {PITCH_AS_5, DIV_8},  {PITCH_GS_5, DIV_8},
+             - {PITCH_AS_5, DIV_8},
+ 121                  {PITCH_DS_6, DIV_1},
+ 122                  
+ 123                  // begins para 74
+ 124                  {1, DIV_1},
+ 125                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+ 126                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+ 127                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_4}, {PITCH_AS_4, DIV_8}, {PITCH_F_5, DIV_8},
+ 128                  {PITCH_FS_5, DIV_8}, {PITCH_AS_4, DIV_8}, {PITCH_F_5, DIV_8}, {PITCH_GS_4, DIV_8}, {PITCH_DS_5, DIV_2},
+ 129                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+ 130                  {PITCH_DS_4, DIV_8}, {PITCH_AS_4, DIV_16}, {PITCH_GS_4, DIV_16}, {PITCH_AS_4, DIV_8}, {PITCH_CS_5, DIV_8}
+             -, {PITCH_DS_5, DIV_2},
+ 131                  
+ 132                  
+ 133                  
+ 134                  // begins para 82
+ 135                  {1, DIV_2}, {PITCH_E_4, DIV_4}, {PITCH_G_4, DIV_4},
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 4   
+
+ 136                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 137                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_4, DIV_4}, {PITCH_D_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 138                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 139                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 140                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 141                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 142                  {PITCH_B_3, DIV_1},
+ 143          
+ 144                  // begins para 90
+ 145                  {PITCH_B_3, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 146                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 147                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_4, DIV_4}, {PITCH_D_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 148                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 149                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 150                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 151                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 152                  {PITCH_B_3, DIV_1},
+ 153                  
+ 154                  // begins para 98
+ 155                  {1, DIV_1},
+ 156                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 157                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 158                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 159                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 160                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 161                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 162                  {PITCH_B_3, DIV_1},
+ 163                  
+ 164                  // begins para 106
+ 165                  {PITCH_DS_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 166                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 167                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 168                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 169                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 170                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 171                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 172                  {PITCH_B_3, DIV_1},
+ 173                  {1, DIV_1},
+ 174                  
+ 175                  // begins para 115
+ 176                  {PITCH_B_4, DIV_2}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_A_4, DIV_16 | DIV_ADD_HALF}, {PITCH_E_4, D
+             -IV_8},
+ 177                  {PITCH_B_4, DIV_2}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_A_4, DIV_16 | DIV_ADD_HALF}, {PITCH_E_4, D
+             -IV_8},
+ 178                  {PITCH_A_4, DIV_2}, {PITCH_A_4, DIV_16 | DIV_ADD_HALF}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_E_4, D
+             -IV_8},
+ 179                  {PITCH_GS_4, DIV_4}, {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4},
+ 180                  {PITCH_B_4, DIV_2}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_A_4, DIV_16 | DIV_ADD_HALF}, {PITCH_E_4, D
+             -IV_8},
+ 181                  {PITCH_B_4, DIV_2}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_E_4, DIV_16 | DIV_ADD_HALF}, {PITCH_G_4, D
+             -IV_8},
+ 182                  {PITCH_A_4, DIV_2}, {PITCH_E_4, DIV_16 | DIV_ADD_HALF}, {PITCH_B_4, DIV_16 | DIV_ADD_HALF}, {PITCH_C_5, D
+             -IV_8},
+ 183                  {PITCH_C_5, DIV_8}, {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_8}, {PITCH_A_4, DIV_4}, {PITC
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 5   
+
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 184                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 185                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 186                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 187                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 188                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 189                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 190                  {PITCH_B_3, DIV_1},
+ 191                  
+ 192                  // begins para 130
+ 193                  {PITCH_DS_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 194                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 195                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 196                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_D_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITC
+             -H_B_4, DIV_8},
+ 197                  {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_E_4, DIV_4}, {PITC
+             -H_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 198                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_E_4, DIV_4}, {PITCH_E_4, DIV_8}, {PITCH_G_4, DIV_8},
+ 199                  {PITCH_A_4, DIV_4}, {PITCH_B_4, DIV_4}, {PITCH_FS_4, DIV_4}, {PITCH_FS_4, DIV_8}, {PITCH_D_4, DIV_8},
+ 200                  {PITCH_B_3, DIV_1},
+ 201                  {1, DIV_1},
+ 202                  
+ 203                  // begins para 139
+ 204                  {PITCH_B_4, DIV_1},
+ 205                  {PITCH_B_4, DIV_8}, {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITC
+             -H_E_5, DIV_8}, {PITCH_D_5, DIV_8}, {PITCH_E_5, DIV_8},
+ 206                  {PITCH_B_4, DIV_8}, {PITCH_B_4, DIV_2},
+ 207                  {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_C_6, DIV_8}, {PITCH_B_5, DIV_8}, {PITC
+             -H_A_5, DIV_8}, {PITCH_G_5, DIV_4},
+ 208                  {PITCH_A_5, DIV_2}, {PITCH_A_5, DIV_4},
+ 209                  {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_D_5, DIV_8}, {PITCH_E_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITC
+             -H_E_5, DIV_8}, {PITCH_A_4, DIV_8},
+ 210                  {PITCH_B_4, DIV_1},
+ 211          
+ 212                  // begins para 146
+ 213                  {PITCH_B_4, DIV_8}, {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITC
+             -H_E_5, DIV_8}, {PITCH_D_5, DIV_4},
+ 214                  {PITCH_B_4, DIV_1},
+ 215                  {PITCH_B_4, DIV_8}, {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITC
+             -H_E_5, DIV_8}, {PITCH_D_5, DIV_8}, {PITCH_E_5, DIV_8},
+ 216                  {PITCH_B_4, DIV_1},
+ 217                  {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_C_6, DIV_8}, {PITCH_B_5, DIV_8}, {PITC
+             -H_A_5, DIV_8}, {PITCH_G_5, DIV_4},
+ 218                  {PITCH_A_5, DIV_8}, {PITCH_A_5, DIV_4 | DIV_ADD_HALF}, {PITCH_A_5, DIV_4},
+ 219                  {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8}, {PITCH_D_5, DIV_8}, {PITCH_E_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITC
+             -H_E_5, DIV_8}, {PITCH_A_4, DIV_8},
+ 220                  {PITCH_B_4, DIV_8 | DIV_ADD_HALF}, {PITCH_A_5, DIV_8}, {PITCH_B_5, DIV_16}, {PITCH_C_6, DIV_16}, {PITCH_E
+             -_6, DIV_16}, {PITCH_C_6, DIV_16}, {PITCH_B_5, DIV_8}, {PITCH_E_5, DIV_4},
+ 221                  {PITCH_G_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITCH_C_6, DIV_8}, {PITCH_B_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITC
+             -H_G_5, DIV_4},
+ 222                  {PITCH_A_5, DIV_4 | DIV_ADD_HALF}, {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8},
+ 223                  {PITCH_A_5, DIV_4}, {PITCH_B_5, DIV_4}, {PITCH_E_5, DIV_4}, {PITCH_E_5, DIV_8}, {PITCH_G_5, DIV_8},
+ 224                  {PITCH_A_5, DIV_4}, {PITCH_B_5, DIV_4}, {PITCH_D_6, DIV_8}, {PITCH_B_5, DIV_8}, {PITCH_A_5, DIV_8}, {PITC
+             -H_B_5, DIV_8},
+ 225                  {PITCH_E_6, DIV_1},
+ 226                  {1, DIV_1},
+ 227                  
+ 228                  // begins para 160
+ 229                  {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_16}, {PITCH_A_4, DIV_16}, {PITCH_B_4, DIV_8}, {PITCH_D_5, DIV_8}, {PI
+             -TCH_E_5, DIV_2},
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 6   
+
+ 230                  {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_16}, {PITCH_A_4, DIV_16}, {PITCH_B_4, DIV_8}, {PITCH_D_5, DIV_8}, {PI
+             -TCH_E_5, DIV_2},
+ 231                  {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_16}, {PITCH_A_4, DIV_16}, {PITCH_B_4, DIV_8}, {PITCH_D_5, DIV_8}, {PI
+             -TCH_E_5, DIV_4}, {PITCH_B_4, DIV_8}, {PITCH_FS_5, DIV_8},
+ 232                  {PITCH_G_5, DIV_8}, {PITCH_B_4, DIV_8}, {PITCH_FS_5, DIV_8}, {PITCH_A_4, DIV_8}, {PITCH_E_5, DIV_2},
+ 233                  {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_16}, {PITCH_A_4, DIV_16}, {PITCH_B_4, DIV_8}, {PITCH_D_5, DIV_8}, {PI
+             -TCH_E_5, DIV_2},
+ 234                  {PITCH_E_4, DIV_8}, {PITCH_B_4, DIV_16}, {PITCH_A_4, DIV_16}, {PITCH_B_4, DIV_8}, {PITCH_D_5, DIV_8}, {PI
+             -TCH_E_5, DIV_1},
+ 235                  {PITCH_E_3, DIV_1}, {PITCH_G_3, DIV_1}, {PITCH_B_3, DIV_1}, {PITCH_E_4, DIV_1}, {PITCH_A_5, DIV_1}, {PITC
+             -H_B_5, DIV_1}, {PITCH_D_6, DIV_1}, {PITCH_E_6, DIV_1},
+ 236          
+ 237                  {0,1}
+ 238          };
+ 239          
+ 240          volatile uint ms_cnt = 0;
+ 241          volatile uint duration_ms_isr;
+ 242          volatile uchar need_timing;
+ 243          
+ 244          //***************************************************************
+ 245          //@brief Timer 2 ISR. Providing a tempo for the whole system
+ 246          //@brief the tempo is set to 500us
+ 247          #ifdef USE_STC15
+              void timer2_isr() interrupt 12 {
+                      if (need_timing == 1) {
+                              ms_cnt++;
+                              if (ms_cnt == duration_ms_isr) {
+                                      ms_cnt = 0;
+                                      need_timing = 0;
+                              }
+                      }
+              }
+              #else
+ 258          void timer2_isr() interrupt 5 {
+ 259   1              if (need_timing == 1) {
+ 260   2                      ms_cnt++;
+ 261   2                      if (ms_cnt == duration_ms_isr) {
+ 262   3                              ms_cnt = 0;
+ 263   3                              need_timing = 0;
+ 264   3                      }
+ 265   2              }
+ 266   1      }
+ 267          #endif  //USE_STC15
+ 268          
+ 269          //***************************************************************
+ 270          //@brief delay ms miliseconds
+ 271          //@ret   On timing up, set time_ms_done to 1
+ 272          void delay_ms(uint ms) {
+ 273   1              uint i;
+ 274   1              EA = 0;
+ 275   1              TR0 = 0;
+ 276   1              for (i = 0; i < ms; i++) {
+ 277   2              // this lasts for 1 ms
+ 278   2                      TF0 = 0;
+ 279   2                      TL0 = (65536 - 1000) % 256;
+ 280   2                      TH0 = (65536 - 1000) >> 8;
+ 281   2                      TR0 = 1;
+ 282   2                      while (TF0 == 0);
+ 283   2              }
+ 284   1              TR0 = 0;
+ 285   1              TF0 = 0;
+ 286   1              EA = 1;
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 7   
+
+ 287   1      }
+ 288          
+ 289          //***************************************************************
+ 290          //@brief play sound at pitch for duration_ms ms
+ 291          void play_sound(uint pitch, uint duration_ms) {
+ 292   1      //      uchar tl0_val = pitch % 256;
+ 293   1      //      uchar th0_val = pitch >> 8;
+ 294   1              duration_ms_isr = duration_ms << 1; // duration_ms_isr = duration_ms * 2; // Since the system tempo is 50
+             -0us, you need a double to get 1ms
+ 295   1              TL0 = pitch % 256;
+ 296   1              TH0 = pitch >> 8;
+ 297   1              need_timing = 1;
+ 298   1              while (need_timing == 1) {
+ 299   2                      if (pitch != 1) {
+ 300   3                              pin_sound_out = !pin_sound_out;
+ 301   3                              TR0 = 1;
+ 302   3                              while (TF0 == 0);
+ 303   3                              TF0 = 0;
+ 304   3                      }
+ 305   2              }
+ 306   1      }
+ 307          
+ 308          //***************************************************************
+ 309          //@brief Play a piece of melody
+ 310          //@param melody: Array of notes of type Note (aka struck _Note)
+ 311          //@param num_notes:    Total number of notes to play. This is actually the element number of melody
+ 312          //@param unit_length_ms: control how long should one note be (in milisecond)
+ 313          void play_melody(Note *melody, uint unit_length_ms) {
+ 314   1              uint i = 0;
+ 315   1              uchar true_div;
+ 316   1              uchar is_halved;
+ 317   1              while (melody[i].pitch != 0){
+ 318   2                      is_halved = melody[i].pitch & 0x80;
+ 319   2                      true_div = melody[i].pitch & 0x7f;
+ 320   2                      play_sound(melody[i].pitch, 
+ 321   2                                 (is_halved) ? ( unit_length_ms >> true_div + unit_length_ms >> (true_div - 1) )
+ 322   2                                    : unit_length_ms >> true_div
+ 323   2                        );
+ 324   2                      i++;
+ 325   2              }
+ 326   1      }
+ 327          
+ 328          
+ 329          //***************************************************************
+ 330          void main(){
+ 331   1      #ifdef USE_STC15
+                      AUXR &= 0xf7;    // T2_C/T' = 0
+                      AUXR &= 0x7f;    // forcing 12T mode for T0
+                      AUXR &= 0xfb;     // forcing 12T mode for T2
+                      TMOD = 0x00;
+                      T2L = T2L_RST;
+                      T2H = T2H_RST;
+                      ET0 = 0;
+                      IE2 |= 0x04;   // ET2 = 1
+                      AUXR |= 0x10;   // T2R = 1
+                      EA = 1;
+              #else
+ 343   1              TMOD = 0x01;
+ 344   1              TL2 = T2L_RST;
+ 345   1              TH2 = T2H_RST;
+ 346   1              ET0 = 0;
+ 347   1              ET2 = 1;
+C51 COMPILER V9.52.0.0   MAIN                                                              11/19/2017 20:19:44 PAGE 8   
+
+ 348   1              T2CON |= (1 << 2);  // T2R = 1
+ 349   1              EA = 1;
+ 350   1      #endif // USE_STC15
+ 351   1              
+ 352   1              P34 = 1;
+ 353   1              pin_sound_out = 1;
+ 354   1      //      delay_ms(3000);
+ 355   1              P34 = 0;
+ 356   1              play_melody(melody_inocent_treasures, 2500);
+ 357   1              pin_sound_out = 0;
+ 358   1              P34 = 1;
+ 359   1      
+ 360   1      
+ 361   1              for (;;) {
+ 362   2                      ;
+ 363   2              }
+ 364   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    307    ----
+   CONSTANT SIZE    =   2385    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      5       8
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
