@@ -28,5 +28,5 @@ sdcc --verbose -UUSE_STC15 main.c -o "stc15_exec/soundgen.hex"
 ```
 
 # 其他文件
-pitches.xlsx	用来计算计数器初值的Excel表格。计算结果体现在pitches.h中
-童祭_Innocent_Treasures_高音部.pdf	程序内置音乐的乐谱。使用[MidiSheetMusic](http://midisheetmusic.sourceforge.net/)生成。
+pitches.xlsx: 用来计算计数器初值的Excel表格。计算结果体现在pitches.h中
+童祭_Innocent_Treasures_高音部.pdf: 程序内置音乐的乐谱。使用[MidiSheetMusic](http://midisheetmusic.sourceforge.net/)生成。
