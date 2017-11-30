@@ -24,7 +24,7 @@ sdcc --verbose -UUSE_STC15 main.c -o "at89x52_exec/soundgen.hex"
 ```
 cd sdcc
 mkdir stc15_exec
-sdcc --verbose -UUSE_STC15 main.c -o "stc15_exec/soundgen.hex"
+sdcc --verbose -DUSE_STC15 main.c -o "stc15_exec/soundgen.hex"
 ```
 
 # 其他文件
