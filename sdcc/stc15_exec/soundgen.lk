@@ -1,5 +1,5 @@
 -muwx
--i stc15_exec/soundgen.hex
+-i stc15_exec/soundgen.ihx
 -M
 -Y
 -b HOME = 0x0000

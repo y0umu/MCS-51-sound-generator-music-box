@@ -1,16 +1,17 @@
-//#define USE_STC15    // without the define it will fall back to the headers, macros, etc defined by your compiler
+#define USE_STC15    // without the define it will fall back to the headers, macros, etc defined by your compiler
 
 #include "pitches.h"
-#ifdef USE_STC15
-  #include "STC15.H"
-#else
-  #include <at89x52.h>
-#endif  // USE_STC15
+#include <at89x52.h>
 
-#ifndef USE_STC15
 #define P33  P3_3
 #define P34  P3_4
-#endif  // USE_STC15
+
+#ifdef USE_STC15
+__sfr __at 0x8E AUXR  ;
+__sfr __at 0xD6 T2H   ;
+__sfr __at 0xD7 T2L   ;
+__sfr __at 0xAF IE2   ;
+#endif
 
 typedef unsigned char uchar;
 typedef unsigned int uint;
@@ -315,12 +316,20 @@ void play_melody(Note *melody, uint unit_length_ms) {
 	uchar true_div;
 	uchar is_halved;
 	while (melody[i].pitch != 0){
-		is_halved = melody[i].pitch & 0x80;
-		true_div = melody[i].pitch & 0x7f;
-		play_sound(melody[i].pitch, 
-		           (is_halved) ? ( unit_length_ms >> true_div + unit_length_ms >> (true_div - 1) )
-                              : unit_length_ms >> true_div
-                  );
+		is_halved = melody[i].div & 0x80;
+		true_div = melody[i].div & 0x7f;
+		if (true_div == 0 && is_halved) {
+			// if ture_div == DIV_1 (that is 0x00) you cannot substract from it
+			play_sound(melody[i].pitch, 
+		               ( unit_length_ms + unit_length_ms >> 1 )
+                      );
+		}
+		else {
+			play_sound(melody[i].pitch, 
+		               (is_halved) ? ( (unit_length_ms >> true_div) + (unit_length_ms >> (true_div - 1)) )
+                                   : ( unit_length_ms >> true_div )
+			          );
+		}
 		i++;
 	}
 }
@@ -355,7 +364,7 @@ void main(){
 	P34 = 0;
 	play_melody(melody_inocent_treasures, 2500);
 	pin_sound_out = 0;
-	P34 = 1;
+//	P34 = 1;
 
 
 	for (;;) {

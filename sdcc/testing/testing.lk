@@ -1,5 +1,5 @@
 -muwx
--i at89x52_exec\soundgen.hex
+-i testing.ihx
 -M
 -Y
 -b HOME = 0x0000
@@ -13,6 +13,6 @@
 -l libint
 -l liblong
 -l libfloat
-at89x52_exec\soundgen.rel
+testing.rel
 
 -e

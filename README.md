@@ -11,20 +11,18 @@
 3. 此项目使用52兼容控制器的P3.3脚输出音频信号。你可以在P3.3脚接上三极管射极驱动器驱动一无源蜂鸣器发声。
 
 # 生成hex文件
-本项目同时提供了Keil版的C文件和SDCC版的C文件。 本README只说明如何用SDCC生成所需的hex文件。有关SDCC的更多信息，请访问[http://sdcc.sourceforge.net/](http://sdcc.sourceforge.net/)
+本项目同时提供了Keil版的C文件和SDCC版的C文件。 
 
-要生成AT89X52系列硬件的hex：
-```
-cd sdcc
-mkdir at89x52_exec
-sdcc --verbose -UUSE_STC15 main.c -o "at89x52_exec/soundgen.hex"
-```
+（然而SDCC生成的hex通过STC-ISP的上传到芯片后并不能正常工作。目前我还没搞清楚是我的代码移植有问题还是STC的芯片有问题。）
 
-要生成兼容STC15系列硬件硬件的hex：
+~~本README只说明如何用SDCC生成所需的hex文件。有关SDCC的更多信息，请访问[http://sdcc.sourceforge.net/](http://sdcc.sourceforge.net/)~~
+
+~~要生成兼容STC15系列硬件硬件的hex：~~
 ```
-cd sdcc
-mkdir stc15_exec
-sdcc --verbose -DUSE_STC15 main.c -o "stc15_exec/soundgen.hex"
+~~cd sdcc~~
+~~mkdir stc15_exec~~
+~~sdcc --verbose -DUSE_STC15 main.c -o "stc15_exec/soundgen.ihx"~~
+~~packihx stc15_exec/soundgen.ihx > stc15_exec/soundgen.hex~~
 ```
 
 # 其他文件
