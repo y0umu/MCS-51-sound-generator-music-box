@@ -121,11 +121,11 @@
 #define PITCH_B_8 65473
 
 // Division marks, used to shift-right the unit_length_ms parameter when calling play_melody()
-#define DIV_1    0
-#define DIV_2    1
-#define DIV_4    2
-#define DIV_8    3
-#define DIV_16   4
+#define DIV_1    0x00
+#define DIV_2    0x01
+#define DIV_4    0x02
+#define DIV_8    0x03
+#define DIV_16   0x04
 #define DIV_ADD_HALF    0x80
 // for example there is a 3/8 note making the PITCH_DS_4 pitch, to construct it:
 // Note note = {PITCH_DS_4, DIV_8 | DIV_ADD_HALF }

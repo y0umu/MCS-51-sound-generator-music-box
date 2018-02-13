@@ -1,4 +1,4 @@
-//#define USE_STC15    // without the define it will fall back to the headers, macros, etc defined by your compiler
+#define USE_STC15    // without the define it will fall back to the headers, macros, etc defined by your compiler
 
 #include "pitches.h"
 #ifdef USE_STC15
@@ -10,7 +10,7 @@
 #ifndef USE_STC15
 sbit P33 = P3^3;
 sbit P34 = P3^4;
-#endif  // USE_STC15
+#endif  // if not USE_STC15
 
 typedef unsigned char uchar;
 typedef unsigned int uint;
@@ -315,12 +315,20 @@ void play_melody(Note *melody, uint unit_length_ms) {
 	uchar true_div;
 	uchar is_halved;
 	while (melody[i].pitch != 0){
-		is_halved = melody[i].pitch & 0x80;
-		true_div = melody[i].pitch & 0x7f;
-		play_sound(melody[i].pitch, 
-		           (is_halved) ? ( unit_length_ms >> true_div + unit_length_ms >> (true_div - 1) )
-                              : unit_length_ms >> true_div
-                  );
+		is_halved = melody[i].div & 0x80;
+		true_div = melody[i].div & 0x7f;
+		if (true_div == 0 && is_halved) {
+			// if ture_div == DIV_1 (that is 0x00) you cannot substract from it
+			play_sound(melody[i].pitch, 
+		               ( unit_length_ms + unit_length_ms >> 1 )
+                      );
+		}
+		else {
+			play_sound(melody[i].pitch, 
+		               (is_halved) ? ( (unit_length_ms >> true_div) + (unit_length_ms >> (true_div - 1)) )
+                                   : ( unit_length_ms >> true_div )
+			          );
+		}
 		i++;
 	}
 }
@@ -339,7 +347,7 @@ void main(){
 	IE2 |= 0x04;   // ET2 = 1
 	AUXR |= 0x10;   // T2R = 1
 	EA = 1;
-#else
+#else  // if not USE_STC15
 	TMOD = 0x01;
 	TL2 = T2L_RST;
 	TH2 = T2H_RST;
@@ -347,7 +355,7 @@ void main(){
 	ET2 = 1;
 	T2CON |= (1 << 2);  // T2R = 1
 	EA = 1;
-#endif // USE_STC15
+#endif
 	
 	P34 = 1;
 	pin_sound_out = 1;
